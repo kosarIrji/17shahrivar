@@ -15,6 +15,11 @@ import SideBar from "./components/SideBar";
 import Priorities from "./components/Priorities";
 import Location  from "./components/location";
 import Comments from "./components/Comments"
+import Header from "./components/Header"
+import MobileMenu from "./components/MobailMenu";
+import Footer from "./components/Footer"
+
+
 function App() {
   return (
     <div
@@ -24,11 +29,18 @@ function App() {
       style={{ backgroundImage: "url('./images/bg.jpg')" }}>
 
     </div>
-      <SideBar />
+      
+      
       <div className="pl-[8-px] pr-[8px] pb-5  md:pr-60 md:pl-5 ">
         {" "}
+
         {/* حاشیه راست برای نوبار */}
         <Container>
+          <div className="px-0 flex justify-center">
+            <SideBar />
+          <Header />
+          <MobileMenu/>
+          </div>
           <div id="identify">
             <Identify />
           </div>
@@ -56,9 +68,14 @@ function App() {
           <div id="summary">
             <Summary />
           </div>
+          
           <div id="comments"><Comments /></div>
+          <div className="">
+        
+      </div>
           {/* <div id="images"><ImageGallery /></div> */}
         </Container>
+        <Footer />
       </div>
     </div>
   );
